@@ -16,6 +16,11 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
+import CharacterCreate from '../CharacterCreate/CharacterCreate';
+import PageCreate from '../PageAdmin/PageCreate';
+import PageAdmin from '../PageAdmin/PageAdmin';
+import StoryPage from '../StoryPage/StoryPage';
+import ChoiceCreate from '../PageAdmin/ChoiceCreate';
 
 import './App.css';
 
@@ -55,8 +60,43 @@ class App extends Component {
               path="/info"
               component={InfoPage}
             />
+            <ProtectedRoute
+              exact
+              path="/charactercreate"
+              component={CharacterCreate}
+            />
+            <ProtectedRoute
+              exact
+              path="/pagecreate"
+              component={PageCreate}
+            />
+            <ProtectedRoute
+              exact
+              path="/pageadmin"
+              component={PageAdmin}
+            />
+            <ProtectedRoute
+              exact
+              path="/storypage"
+              component={StoryPage}
+            />
+            <ProtectedRoute
+              exact
+              path="/choicecreate"
+              component={ChoiceCreate}
+            />
+
+
+
+
+
             {/* If none of the other routes matched, we will show a 404. */}
-            <Route render={() => <h1>404</h1>} />
+            <Route render={() => 
+              <div>
+                <h1>TO BE CONTINUED...</h1>
+                <h4><i>It appears the next page in your adventure is yet to be written!</i></h4>
+              </div>
+            } />
           </Switch>
           <Footer />
         </div>
