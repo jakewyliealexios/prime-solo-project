@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
     const queryText = `INSERT INTO "choices" 
                             ("choice_text", "next_page_id")
                         VALUES ($1, $2);`;
-    pool.query(queryText, [req.body.page_text, req.body.hp_adjust])
+    pool.query(queryText, [req.body.choice_text, req.body.next_page_idew])
         .then((results) => {
             res.sendStatus(201);
         }).catch((error) => {

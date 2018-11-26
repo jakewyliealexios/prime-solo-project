@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { Link } from 'react-router-dom';
+
 class PageCreate extends Component {
 
     submitForm = (event) => {
@@ -30,9 +32,8 @@ class PageCreate extends Component {
         return (
             <div className="App">
                 <p>Character Name:</p>
-                <pre>TEST{JSON.stringify(this.props.reduxState.pageReducer)}</pre>
-                <pre>TEST:{JSON.stringify(this.props.reduxState.pageReducer.pageToAdd.page_text)}</pre>
-                <pre>TEST:{JSON.stringify(this.props.reduxState.pageReducer.pageToAdd.hp_adjust)}</pre>
+                <pre>PAGE TEXT:{JSON.stringify(this.props.reduxState.pageReducer.pageToAdd.page_text)}</pre>
+                <pre>HP ADJUST:{JSON.stringify(this.props.reduxState.pageReducer.pageToAdd.hp_adjust)}</pre>
 
                 <form onSubmit={this.submitForm}>
                     <textarea type="text" onChange={this.onHandleChange} 
@@ -42,6 +43,9 @@ class PageCreate extends Component {
                             name="hp_adjust"
                             placeholder="HP +/0/-" />
                     <input type="submit" value="submit" />
+                    <Link className="nav-link" to="/choicecreate">
+                        Add Choice
+                    </Link>
                 </form>
             </div>
         );

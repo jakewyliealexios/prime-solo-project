@@ -10,10 +10,17 @@ class PageListItem extends Component {
                 <div className="page_row_contents">
                     <h3>{this.props.page.id}</h3>
                     <h4>{this.props.page.page_text}</h4>
-                    <button>Create Choice</button>
                     <Link className="nav-link" to="/choicecreate">
                         Add Choice
                     </Link>
+                    <br>
+                    </br>
+                    <br>
+                    </br>
+                    <br>
+                    </br>
+                    <br>
+                    </br>
 
 
                 </div>
