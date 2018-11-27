@@ -19,6 +19,7 @@ const pageToAdd = (state = {}, action) => {
             // action.payload.value is what the user typed
             return { ...state, [action.payload.key]: action.payload.value }
         default:
+            console.log('Page To Add:', state);
             return state;
     }
 }

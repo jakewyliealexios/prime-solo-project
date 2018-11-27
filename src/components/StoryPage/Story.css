@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(168, 143, 102);
+}
+
+h2 {
+    padding: 30px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+h4 {
+    padding: 20px;
+    margin: 40px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+.choiceArea {
+    background-color: forestgreen;
+    width: 30%;
+    height: 25px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 2px;
+}

@@ -1,31 +1,64 @@
 import React, { Component } from 'react';
+import './Story.css';
 
 class StoryPageItem extends Component {
+
+    makeChoice = (event) => {
+        // Stops the page from refreshing
+        // event.preventDefault();
+        // Send the data to the server!
+        console.log('Go To page_id:');
+        
+        // const action = { 
+        //                  type: 'GO_TO_PAGE', 
+        //                  payload: this.props.reduxState.goToPageReducer.pageToGoTo,
+        //                };
+        // this.props.dispatch(action);
+    }
+
 
 
     // Displays details for a single project
     render() {
-
-        let choices = (this.props.choicesState).filter(function(item){
-            console.log('item.choices_id, choice_text', item.choices_id, item.choice_text );
-            console.log('item.choices_id', item.page_id === 1);
-            
-            return item.page_id === 1;  
-        });
-
-        console.log('choices', choices);
         
         return (
             <div>
                 <div>
-                    {/* <h3>{this.props.page.id}</h3> */}
-                    <h3>Story Page Choice Item A (choices_id- choice_text):</h3>
-                    <pre>{JSON.stringify(this.props.choicesState[0].choices_id)}
-                     - {JSON.stringify(this.props.choicesState[0].choice_text)}</pre>
-                    <h3>Story Page Choice Item A B C:</h3>
-                    <pre>{JSON.stringify(choices[0])}</pre>
-                    <pre>{JSON.stringify(choices[1])}</pre>
-                    <pre>{JSON.stringify(choices[2])}</pre>
+                    <h3>Story Page Text:</h3>
+                    {this.props.pageState.map((page, i) => {
+                        return(<h2>{page.page_text}</h2>);
+                    })}
+                </div>
+                <div>
+                    {/* <h3>Story Page Choice Item A B C:</h3>
+                    <pre>{JSON.stringify(this.props.choicesState)}</pre>
+
+                    {this.props.choicesState.map((page, i) => {
+                        return (<pre>{JSON.stringify(page.choice_text)}</pre>);
+                    })}
+
+                    {this.props.choicesState.map((page, i) => {
+                        return (<pre>{JSON.stringify(page.next_page_id)}</pre>);
+                    })}                 */}
+
+                    {this.props.choicesState.map((page, i) => {
+                        return (
+                            <div>
+                                <h4>{page.choice_text}</h4>
+
+                                <form class="choiceArea" onSubmit={this.makeChoice}>
+                                    {/* <input type="hidden" id="rowid" value={page.next_page_id}/> */}
+                                    <input type="number" onChange={this.onHandleChange}
+                                        name="hp_adjust"
+                                        placeholder="test next_page_id" />
+                                    <input type="submit" value="Choose!" />
+                                    <button onClick={this.makeChoice(page.next_page_id)}>Choose.</button>
+                                    <p>next_page_id: {page.next_page_id}</p>
+                                </form>
+
+                            </div>);
+                    })}
+                    
 
                 </div>
             </div>

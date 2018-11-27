@@ -39,9 +39,9 @@ class ChoiceCreate extends Component {
                     <textarea type="text" onChange={this.onHandleChange} 
                            name="choice_text"
                            placeholder="Start writing this page's choice content..." />
-                    <input type="number" onChange={this.onHandleChange}
+                    {/* <input type="number" onChange={this.onHandleChange}
                             name="next_page_id"
-                            placeholder="Next Page Id" />
+                            placeholder="Next Page Id" /> */}
                     <input type="submit" value="submit" />
                 </form>
             </div>

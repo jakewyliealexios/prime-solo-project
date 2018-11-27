@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { Grid } from '@material-ui/core'
+// import { Grid } from '@material-ui/core'
 
 import StoryPageItem from './StoryPageItem';
 
@@ -17,23 +17,16 @@ class StoryPage extends Component {
     render() {
         return (
             <div>
-                <pre>{JSON.stringify(this.props.reduxState.choiceReducer)}</pre>
-
-                <pre>{JSON.stringify(this.props.reduxState.pageReducer.pageState[0].page_text)}</pre>
-
-                <pre>{JSON.stringify(this.props.reduxState.choiceReducer.choicesState[0].choice_text)}</pre>
-                <pre>{JSON.stringify(this.props.reduxState.choiceReducer.choicesState.choice_text)}</pre>
-
-
+                {/* <h3>Story Page Text:</h3>
+                <pre>{JSON.stringify(this.props.reduxState.pageReducer.pageState[0].page_text)}</pre> */}
 
                 {/* {this.props.reduxState.pageReducer.pageState.map((page, i) => {
                     return (<StoryPageItem key={i} page={page} />);
                 })} */}
-                <StoryPageItem choicesState={this.props.reduxState.choiceReducer.choicesState}/>
+                <StoryPageItem
+                    choicesState={this.props.reduxState.choiceReducer.choicesState}
+                    pageState={this.props.reduxState.pageReducer.pageState}/>
 
-                <Grid container>
-
-                </Grid>
             </div>
         );
     }
