@@ -6,6 +6,7 @@ const pageState = (state = [{page_text: 'Placeholder story text ...'}], action) 
         case 'SET_PAGES':
             return action.payload;
         default:
+            console.log('pageState:', state);
             return state;
     }
 }
@@ -28,4 +29,5 @@ const pageToAdd = (state = {}, action) => {
 export default combineReducers({
     pageState,
     pageToAdd,
+    // pageToGoTo,
 });

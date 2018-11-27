@@ -25,7 +25,9 @@ class StoryPage extends Component {
                 })} */}
                 <StoryPageItem
                     choicesState={this.props.reduxState.choiceReducer.choicesState}
-                    pageState={this.props.reduxState.pageReducer.pageState}/>
+                    pageState={this.props.reduxState.pageReducer.pageState}
+                    pageToGoTo={this.props.reduxState.pageReducer.pageToGoTo}
+                    />
 
             </div>
         );

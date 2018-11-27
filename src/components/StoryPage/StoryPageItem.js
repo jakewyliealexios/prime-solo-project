@@ -5,15 +5,14 @@ class StoryPageItem extends Component {
 
     makeChoice = (event) => {
         // Stops the page from refreshing
-        // event.preventDefault();
-        // Send the data to the server!
-        console.log('Go To page_id:');
-        
-        // const action = { 
-        //                  type: 'GO_TO_PAGE', 
-        //                  payload: this.props.reduxState.goToPageReducer.pageToGoTo,
-        //                };
+        // Send the button click request to the server!
+        const action = { 
+                         type: 'FETCH_PAGES', 
+                         payload: this.props.pageState,
+                       };
         // this.props.dispatch(action);
+        console.log('action', action);
+        
     }
 
 

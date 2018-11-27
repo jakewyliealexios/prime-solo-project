@@ -6,7 +6,8 @@ const router = express.Router();
 router.get('/', (req, res) => {
     // Alias tag name as tag
     const queryText = `SELECT * FROM page WHERE id=1;`;
-    pool.query(queryText).then((results) => {
+    pool.query(queryText)
+        .then((results) => {
         console.log(results);
         res.send(results.rows);
     }).catch((error) => {

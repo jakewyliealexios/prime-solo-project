@@ -14,6 +14,8 @@ class PageCreate extends Component {
                          payload: this.props.reduxState.pageReducer.pageToAdd,
                        };
         this.props.dispatch(action);
+        console.log('action', action);
+        
     }
 
     onHandleChange = (event) => {
