@@ -6,7 +6,19 @@ const pageState = (state = [{page_text: 'Placeholder story text ...'}], action) 
         case 'SET_PAGES':
             return action.payload;
         default:
-            console.log('pageState:', state);
+            console.log('pageState REDUCER:', state);
+            return state;
+    }
+}
+
+//currentPage: current page, along with current choice information
+
+const currentPageState = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_PAGE':
+            return action.payload;
+        default:
+            console.log('currentPageState REDUCER:', state);
             return state;
     }
 }
@@ -29,5 +41,5 @@ const pageToAdd = (state = {}, action) => {
 export default combineReducers({
     pageState,
     pageToAdd,
-    // pageToGoTo,
+    currentPageState,
 });

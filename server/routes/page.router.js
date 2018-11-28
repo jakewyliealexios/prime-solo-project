@@ -16,6 +16,24 @@ router.get('/', (req, res) => {
     })
 });
 
+// router.get('/next_page_id', (req, res) => {
+//     // Alias tag name as tag
+//     console.log('req.body for router.get /next_page_id', req.body);
+//     const queryText = `SELECT * FROM page WHERE id=$1;`;
+//     pool.query(queryText, [req.body.next_page_id])
+//         .then((results) => {
+//         console.log(results);
+//         res.send(results.rows);
+//     }).catch((error) => {
+//         console.log(error);
+//         res.sendStatus(500);
+//     })
+// });
+
+
+//get request for /:next_page_id
+//join choices
+
 // Add information from the client to the database
 router.post('/', (req, res) => {
     console.log('req.body is set as', req.body);

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// import { Grid } from '@material-ui/core'
-
 import StoryPageItem from './StoryPageItem';
 
 class StoryPage extends Component {
@@ -26,7 +24,7 @@ class StoryPage extends Component {
                 <StoryPageItem
                     choicesState={this.props.reduxState.choiceReducer.choicesState}
                     pageState={this.props.reduxState.pageReducer.pageState}
-                    pageToGoTo={this.props.reduxState.pageReducer.pageToGoTo}
+                    currentPageState={this.props.reduxState.pageReducer.currentPageState}
                     />
 
             </div>

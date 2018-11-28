@@ -1,10 +1,13 @@
 body {
-    background-color: rgb(168, 143, 102);
+    /* background-color: rgb(168, 143, 102); */
+    background-image: linear-gradient(rgb(168, 143, 102), rgb(134, 108, 65));
 }
 
 h2 {
+    margin: 30px;
     padding: 30px;
     background-color: antiquewhite;
+    font-size: 27px;
     text-align: center;
 }
 
@@ -15,11 +18,50 @@ h4 {
     text-align: center;
 }
 
+.button {
+    background-color: #003d0f; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    font-style: italic;
+}
+
+.startButton {
+    background-color: forestgreen; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-style: bold;
+}
+
+
+
 .choiceArea {
     background-color: forestgreen;
+    text-align: center;
+    vertical-align: center;
     width: 30%;
-    height: 25px;
+    height: 50px auto;
     margin: 20px auto;
     padding: 25px;
+    border-radius: 2px;
+}
+
+.startArea {
+    background-color: antiquewhite;
+    text-align: center;
+    vertical-align: center;
+    width: 20%;
+    height: 10px auto;
+    margin: 20px auto;
+    padding: 10px;
     border-radius: 2px;
 }

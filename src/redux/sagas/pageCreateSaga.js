@@ -6,6 +6,7 @@ import axios from 'axios';
 function* pageCreateSaga() {
     yield takeEvery('ADD_PAGE', postPage);
     yield takeEvery('FETCH_PAGES', getPages);
+    yield takeEvery('NEW_PAGE_CHOICE', getPageWithChoices);
 }
 
 function* getPages() {
@@ -13,15 +14,37 @@ function* getPages() {
         const response = yield call(axios.get, '/page');
         const action = {type: 'SET_PAGES', payload: response.data};
         yield put(action);
+        yield console.log('getPages response.data', response.data);
+        
     } catch (error) {
         console.log(error);
         alert('Unable to get pages (getPages)');
     }
 }
 
+//function that makes a single page GET request '/page/next_page_id'
+//two yield calls (page and choices) ... to send to a reducer
+
+function* getPageWithChoices(action) {
+    yield console.log('getPageWithChoices action.payload', action.payload);
+    try {
+        const response = yield call(axios.get, `/story?next_page_id=${action.payload.value}`);      
+        yield console.log('getPageWithChoices response.data', response.data);
+        yield console.log('Choice -> page_text:', response.data[0].page_text);
+        const currentPage = {type: 'SET_PAGE', payload: response.data};
+        yield put(currentPage);
+
+    } catch (error) {
+        console.log(error);
+        alert('Unable to getPageWithChoices'); 
+    }
+}
+
 function* postPage(action) {
     try {
         yield call(axios.post, '/page', action.payload);
+        console.log('postPage action.payload:', action.payload);
+        
         // TODO: Add our GET saga
         yield put({type: 'FETCH_PAGES'});
     } catch (error) {

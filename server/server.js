@@ -16,6 +16,7 @@ const userRouter = require('./routes/user.router');
 const characterRouter = require('./routes/character.router');
 const pageRouter = require('./routes/page.router');
 const choicesRouter = require('./routes/choices.router');
+const storyRouter = require('./routes/story.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -32,6 +33,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/character', characterRouter);
 app.use('/page', pageRouter);
+app.use('/story', storyRouter);
 app.use('/choices', choicesRouter);
 
 // Serve static files

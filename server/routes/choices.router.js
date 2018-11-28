@@ -6,10 +6,8 @@ const router = express.Router();
 router.get('/', (req, res) => {
     // Alias tag name as tag
     const queryText = `
-        SELECT page_choices.page_id, page_choices.choices_id, choices.choice_text, choices.next_page_id FROM page_choices
-        JOIN choices ON page_choices.choices_id = choices.id
-        WHERE page_id=1
-        ORDER BY choices_id ASC;`;
+        SELECT * FROM choices
+        WHERE page_id=1;`;
     pool.query(queryText).then((results) => {
         console.log(results);
         res.send(results.rows);

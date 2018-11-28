@@ -19,7 +19,7 @@ class PageCreate extends Component {
     }
 
     onHandleChange = (event) => {
-        console.log(event.target.name);
+        console.log('event.target.name is what is being edited:', event.target.name);
         const action = { type: 'UPDATE_PROPERTY', 
                          payload: {
                              key: event.target.name,
@@ -44,6 +44,7 @@ class PageCreate extends Component {
                     <input type="number" onChange={this.onHandleChange}
                             name="hp_adjust"
                             placeholder="HP +/0/-" />
+                    <button name="onClick" value="456" onClick={this.onHandleChange}>onClick</button>
                     <input type="submit" value="submit" />
                     <Link className="nav-link" to="/choicecreate">
                         Add Choice

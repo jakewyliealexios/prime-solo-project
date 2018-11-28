@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
 // Used to store characters returned from the server
-// const characters = (state = [{name: 'Koala Holla'}], action) => {
+// const characterState = (state = [{name: 'Character Placeholder'}], action) => {
 //     switch (action.type) {
-//         case 'SET_PROJECTS':
+//         case 'SET_CHARACTERS':
 //             return action.payload;
 //         default:
 //             return state;
