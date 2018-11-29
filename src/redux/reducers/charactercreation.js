@@ -1,15 +1,5 @@
 import { combineReducers } from 'redux';
 
-// Used to store characters returned from the server
-// const characterState = (state = [{name: 'Character Placeholder'}], action) => {
-//     switch (action.type) {
-//         case 'SET_CHARACTERS':
-//             return action.payload;
-//         default:
-//             return state;
-//     }
-// }
-
 // Store the project that we plan to add to the database
 const characterToAdd = (state = {}, action) => {
     switch (action.type) {
@@ -25,6 +15,5 @@ const characterToAdd = (state = {}, action) => {
 
 // Create one store that all components can use
 export default combineReducers({
-    // projects,
     characterToAdd,
 });

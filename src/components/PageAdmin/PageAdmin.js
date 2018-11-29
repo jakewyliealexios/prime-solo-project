@@ -15,13 +15,11 @@ class PageAdmin extends Component {
     render() {
         return (
             <div>
-                <pre>In PageAdmin:{JSON.stringify(this.props)}</pre>
-
-                <PageList />
+                {/* <pre>In PageAdmin:{JSON.stringify(this.props)}</pre> */}
                 <Link className="nav-link" to="/pagecreate">
                     Create New Story Page
                 </Link>
-
+                <PageList />
             </div>
         );
     }

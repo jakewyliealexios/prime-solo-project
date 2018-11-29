@@ -5,7 +5,7 @@ const router = express.Router();
 // Get all of the projects and return them to the client
 router.get('/', (req, res) => {
     // Alias tag name as tag
-    const queryText = `SELECT * FROM page WHERE id=1;`;
+    const queryText = `SELECT * FROM page ORDER BY id;`;
     pool.query(queryText)
         .then((results) => {
         console.log(results);
@@ -15,24 +15,6 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
     })
 });
-
-// router.get('/next_page_id', (req, res) => {
-//     // Alias tag name as tag
-//     console.log('req.body for router.get /next_page_id', req.body);
-//     const queryText = `SELECT * FROM page WHERE id=$1;`;
-//     pool.query(queryText, [req.body.next_page_id])
-//         .then((results) => {
-//         console.log(results);
-//         res.send(results.rows);
-//     }).catch((error) => {
-//         console.log(error);
-//         res.sendStatus(500);
-//     })
-// });
-
-
-//get request for /:next_page_id
-//join choices
 
 // Add information from the client to the database
 router.post('/', (req, res) => {

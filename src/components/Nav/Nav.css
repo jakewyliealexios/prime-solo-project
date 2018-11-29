@@ -34,3 +34,37 @@
 .nav-right {
   float: right;
 }
+
+.button {
+  background-color: #003d0f; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 28px;
+}
+
+.button:hover {
+  background-color: antiquewhite;
+  color: #003d0f;
+  font-style: italic;
+} 
+
+.editButton {
+  background-color: #003d0f; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.editButton:hover {
+  background-color: antiquewhite;
+  color: #003d0f;
+  font-style: italic;
+} 

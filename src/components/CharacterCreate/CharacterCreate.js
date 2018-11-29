@@ -29,14 +29,15 @@ class CharacterCreate extends Component {
     render() {
         return (
             <div className="App">
-                <p>Character Name:</p>
-                <pre>TEST{JSON.stringify(this.props.reduxState.charactercreation)}</pre>
-                <pre>TEST:{JSON.stringify(this.props.reduxState.charactercreation.characterToAdd.character_name)}</pre>
+                <h2>Enter the name of your character...</h2>
+                {/* <p>Character Name:</p> */}
+                {/* <pre>TEST{JSON.stringify(this.props.reduxState.charactercreation)}</pre>
+                <pre>TEST:{JSON.stringify(this.props.reduxState.charactercreation.characterToAdd.character_name)}</pre> */}
 
                 <form onSubmit={this.submitForm}>
                     <input type="text" onChange={this.onHandleChange} 
                            name="character_name"
-                           placeholder="Character Name" />
+                           placeholder="What is your name?" />
                     <input type="submit" value="submit" />
                 </form>
             </div>

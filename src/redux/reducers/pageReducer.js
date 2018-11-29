@@ -11,8 +11,6 @@ const pageState = (state = [{page_text: 'Placeholder story text ...'}], action) 
     }
 }
 
-//currentPage: current page, along with current choice information
-
 const currentPageState = (state = [], action) => {
     switch (action.type) {
         case 'SET_PAGE':
@@ -22,8 +20,6 @@ const currentPageState = (state = [], action) => {
             return state;
     }
 }
-
-
 
 // Store the project that we plan to add to the database
 const pageToAdd = (state = {}, action) => {
@@ -41,7 +37,7 @@ const pageToAdd = (state = {}, action) => {
 
 // Create one store that all components can use
 export default combineReducers({
-    pageState,
     pageToAdd,
     currentPageState,
+    pageState,
 });

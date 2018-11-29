@@ -5,8 +5,8 @@ import axios from 'axios';
 // Create the rootSaga generator functionc 
 function* pageCreateSaga() {
     yield takeEvery('ADD_PAGE', postPage);
-    yield takeEvery('FETCH_PAGES', getPages);
     yield takeEvery('NEW_PAGE_CHOICE', getPageWithChoices);
+    yield takeEvery('FETCH_PAGES', getPages);
 }
 
 function* getPages() {

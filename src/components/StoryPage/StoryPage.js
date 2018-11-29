@@ -15,19 +15,12 @@ class StoryPage extends Component {
     render() {
         return (
             <div>
-                {/* <h3>Story Page Text:</h3>
-                <pre>{JSON.stringify(this.props.reduxState.pageReducer.pageState[0].page_text)}</pre> */}
-
-                {/* {this.props.reduxState.pageReducer.pageState.map((page, i) => {
-                    return (<StoryPageItem key={i} page={page} />);
-                })} */}
                 <StoryPageItem
                     choicesState={this.props.reduxState.choiceReducer.choicesState}
                     pageState={this.props.reduxState.pageReducer.pageState}
                     currentPageState={this.props.reduxState.pageReducer.currentPageState}
                     currentChoicesState={this.props.reduxState.choiceReducer.currentChoicesState}
                     />
-
             </div>
         );
     }

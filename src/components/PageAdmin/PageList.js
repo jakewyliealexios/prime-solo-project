@@ -8,10 +8,12 @@ class PageList extends Component {
     render() {
         return (
             <div className="content">
-                <pre>In PageList.js - </pre>
                 <pre>{JSON.stringify(this.props.reduxState.pageReducer)}</pre>
+                <pre>{JSON.stringify(this.props.reduxState.choiceReducer.choicesState)}</pre>
                 {this.props.reduxState.pageReducer.pageState.map((page, i) => {
-                    return (<PageListItem key={i} page={page} />);
+                    return (<PageListItem key={i} page={page}
+                        choicesState={this.props.reduxState.choiceReducer.choicesState}
+                        />);
                 })}
             </div>
         );

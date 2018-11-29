@@ -16,14 +16,9 @@ const UserPage = (props, classes) => (
       </Grid>
       <Grid item sm>
         <h2 id="welcome">
-          user: { props.user.username }
+          Welcome, { props.user.username }!
         </h2>
-
-        {/* <p>Your ID is: {props.user.id}</p>
-        <pre>{JSON.stringify(props.user.id)}</pre> */}
-
-        {/* <LogOutButton className="log-in" /> */}
-
+        <h4>Make your selection below...</h4>
 
       </Grid>
       <Grid item sm>
@@ -33,24 +28,24 @@ const UserPage = (props, classes) => (
     <Grid container>
 
       <Grid item sm>
-        <Link className="nav-link" to="/charactercreate">
+        <Link className="button" to="/charactercreate">
           Create New Character
         </Link>
       </Grid>
 
       <Grid item sm>
-        <Link className="nav-link" to="/pageadmin">
+        <Link className="button" to="/pageadmin">
           New Story Page Admin
         </Link>
       </Grid>
 
       <Grid item sm>
-        <Link className="nav-link" to="/pagecreate">
+        <Link className="button" to="/pagecreate">
           Create New Story Page
         </Link>
       </Grid>
       <Grid item sm>
-        <Link className="nav-link" to="/storypage">
+        <Link className="button" to="/storypage">
           Jump to Story Demo
         </Link>
       </Grid>

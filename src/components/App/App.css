@@ -9,16 +9,21 @@ body {
 }
 
 form {
-    background-color: #dbd5d5;
-    width: 30%;
-    height: 250px;
-    margin: 20px auto;
+    align-content: center;
+    background-color: antiquewhite;
+    width: 325px;
+    height: 20px auto;
+    margin: 50px auto;
     padding: 25px;
     border-radius: 2px;
 }
 
 input {
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    align-content: center;
     margin: 5px;
+    width: 300px;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
