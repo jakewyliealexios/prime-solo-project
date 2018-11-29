@@ -23,6 +23,8 @@ const currentPageState = (state = [], action) => {
     }
 }
 
+
+
 // Store the project that we plan to add to the database
 const pageToAdd = (state = {}, action) => {
     switch (action.type) {

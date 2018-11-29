@@ -12,7 +12,7 @@ class StoryPageItem extends Component {
         console.log('makeChoice event.target.value:', event.target.value);
         
         const action = { 
-                         type: 'NEW_PAGE_CHOICE', 
+                         type: 'NEW_PAGE_CHOICE',
                          payload: {
                             key: event.target.name,
                             value: event.target.value
@@ -59,7 +59,7 @@ class StoryPageItem extends Component {
                         return (<pre>{JSON.stringify(page.next_page_id)}</pre>);
                     })}                 */}
 
-                    {this.props.choicesState.map((page, i) => {
+                    {this.props.currentChoicesState.map((page, i) => {
                         return (
                             <div>
                                 {/* <h4>{page.choice_text}</h4> */}

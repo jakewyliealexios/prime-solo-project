@@ -28,17 +28,26 @@ function* getPages() {
 function* getPageWithChoices(action) {
     yield console.log('getPageWithChoices action.payload', action.payload);
     try {
-        const response = yield call(axios.get, `/story?next_page_id=${action.payload.value}`);      
+        const response = yield call(axios.get, `/story/page?next_page_id=${action.payload.value}`);      
         yield console.log('getPageWithChoices response.data', response.data);
         yield console.log('Choice -> page_text:', response.data[0].page_text);
         const currentPage = {type: 'SET_PAGE', payload: response.data};
         yield put(currentPage);
-
     } catch (error) {
         console.log(error);
-        alert('Unable to getPageWithChoices'); 
+        alert('The next page to your adventure is yet to be written!'); 
+    }
+    try {
+        const choiceResponse = yield call(axios.get, `/story/choices?next_page_id=${action.payload.value}`);      
+        yield console.log('getCurrentChoices choiceResponse.data', choiceResponse.data);
+        const currentChoices = {type: 'SET_CHOICE', payload: choiceResponse.data};
+        yield put(currentChoices);
+    } catch (error) {
+        console.log(error);
+        alert('The choices for the next page are yet to be written!'); 
     }
 }
+
 
 function* postPage(action) {
     try {

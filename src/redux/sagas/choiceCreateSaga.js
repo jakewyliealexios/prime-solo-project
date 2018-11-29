@@ -6,6 +6,7 @@ import axios from 'axios';
 function* pageCreateSaga() {
     yield takeEvery('ADD_CHOICE', postChoice);
     yield takeEvery('FETCH_CHOICES', getChoices);
+    // yield takeEvery('NEW_CHOICES', getCurrentChoices);
 }
 
 function* getChoices() {

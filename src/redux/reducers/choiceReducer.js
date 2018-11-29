@@ -10,6 +10,17 @@ const choicesState = (state = [{page_text: 'Placeholder choice text ...'}], acti
     }
 }
 
+const currentChoicesState = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_CHOICE':
+            return action.payload;
+        default:
+            console.log('currentChoicesState REDUCER:', state);
+            return state;
+    }
+}
+
+
 // Store the project that we plan to add to the database
 const choiceToAdd = (state = {}, action) => {
     switch (action.type) {
@@ -27,4 +38,5 @@ const choiceToAdd = (state = {}, action) => {
 export default combineReducers({
     choicesState,
     choiceToAdd,
+    currentChoicesState,
 });

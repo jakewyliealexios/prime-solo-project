@@ -25,6 +25,7 @@ class StoryPage extends Component {
                     choicesState={this.props.reduxState.choiceReducer.choicesState}
                     pageState={this.props.reduxState.pageReducer.pageState}
                     currentPageState={this.props.reduxState.pageReducer.currentPageState}
+                    currentChoicesState={this.props.reduxState.choiceReducer.currentChoicesState}
                     />
 
             </div>
