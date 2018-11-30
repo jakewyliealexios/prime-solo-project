@@ -1,0 +1,119 @@
+body {
+    /* background-color: rgb(168, 143, 102); */
+    background-image: linear-gradient(rgb(168, 143, 102), rgb(134, 108, 65));
+}
+
+h2 {
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #003d0f;
+    padding: 30px;
+    background-color: antiquewhite;
+    font-size: 36px;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 20px;
+    margin: 40px;
+    background-color: antiquewhite;
+    color: #003d0f;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 20px;
+    margin: 40px;
+    background-color: antiquewhite;
+    color: #003d0f;
+    text-align: center;
+}
+
+.editButton {
+    background-image: linear-gradient(rgb(168, 143, 102), rgb(134, 108, 65));
+    border: none;
+    color: antiquewhite;
+    padding: 15px 30px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.editButton:hover {
+    background-image: linear-gradient(#003d0f, rgb(134, 108, 65));
+    color: antiquewhite;
+} 
+
+.newButton {
+    background-image: linear-gradient(#003d04, rgb(134, 108, 65));
+    border: none;
+    color: antiquewhite;
+    padding: 15px 30px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.newButton:hover {
+    background-image: linear-gradient(#003d0f, forestgreen);
+    color: antiquewhite;
+} 
+
+
+.startButton {
+    background-color: forestgreen; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-style: bold;
+}
+
+.startButton:hover {
+    background-color: rgb(163, 9, 9);
+    color: antiquewhite;
+} 
+
+
+
+.choiceArea {
+    background-color: forestgreen;
+    text-align: center;
+    vertical-align: center;
+    width: 30%;
+    height: 50px auto;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 2px;
+}
+
+.pageEditRow {
+    background-color: #003d0f;
+    text-align: center;
+    vertical-align: center;
+    /* width: 30%; */
+    /* height: 50px auto; */
+    /* margin: 20px auto; */
+    padding: 1pt;
+    /* border-radius: 2px; */
+}
+
+
+.startArea {
+    background-color: antiquewhite;
+    text-align: center;
+    vertical-align: center;
+    width: 20%;
+    height: 10px auto;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 2px;
+}

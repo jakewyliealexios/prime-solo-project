@@ -45,16 +45,16 @@ class StoryPageItem extends Component {
                 </div>
 
                 <div>
-                    {this.props.currentChoicesState.map((page, i) => {
+                    {this.props.currentChoicesState.map((choice, i) => {
                         return (
                             <div>
                                 <div class="choiceArea">
                                     <button 
                                         class="button" 
                                         name="next_page_id" 
-                                        value={page.next_page_id} 
+                                        value={choice.next_page_id} 
                                         onClick={this.makeChoice}>
-                                    {page.choice_text}</button>
+                                    {choice.choice_text}</button>
                                 </div>                                
                             </div>);
                     })}

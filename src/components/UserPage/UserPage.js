@@ -34,21 +34,17 @@ const UserPage = (props, classes) => (
       </Grid>
 
       <Grid item sm>
-        <Link className="button" to="/pageadmin">
-          New Story Page Admin
-        </Link>
-      </Grid>
-
-      <Grid item sm>
-        <Link className="button" to="/pagecreate">
-          Create New Story Page
-        </Link>
-      </Grid>
-      <Grid item sm>
         <Link className="button" to="/storypage">
           Jump to Story Demo
         </Link>
       </Grid>
+
+      <Grid item sm>
+        <Link className="button" to="/pageadmin">
+          Story Editor Admin
+        </Link>
+      </Grid>
+
 
 
     </Grid>
