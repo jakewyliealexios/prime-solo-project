@@ -12,6 +12,7 @@ class ChoiceCreate extends Component {
                          payload: this.props.reduxState.choiceReducer.choiceToAdd,
                        };
         this.props.dispatch(action);
+        this.props.history.push('/pageadmin');
     }
 
     onHandleChange = (event) => {
@@ -25,24 +26,69 @@ class ChoiceCreate extends Component {
         this.props.dispatch(action);
     }
 
+    goBack = ( event, props ) => {
+        this.props.history.push('/pageadmin');
+    }
+
+
     // Renders the entire app on the DOM
     render() {
         return (
             <div className="App">
                 <p>Choice Create:</p>
-                <pre>TEST{JSON.stringify(this.props.reduxState.choiceReducer)}</pre>
+                {/* <pre>pageReducer:{JSON.stringify(this.props.reduxState.pageReducer)}</pre>
+                <pre>choiceReducer:{JSON.stringify(this.props.reduxState.choiceReducer)}</pre>
+                <pre>{JSON.stringify(this.props.reduxState.choiceReducer.currentChoicesState)}</pre>
                 <pre>TEST:{JSON.stringify(this.props.reduxState.choiceReducer.choiceToAdd.choice_text)}</pre>
-                <pre>TEST:{JSON.stringify(this.props.reduxState.choiceReducer.choiceToAdd.next_page_id)}</pre>
+                <pre>TEST:{JSON.stringify(this.props.reduxState.choiceReducer.choiceToAdd.page_id)}</pre>
+                <pre>TEST:{JSON.stringify(this.props.reduxState.choiceReducer.choiceToAdd.next_page_id)}</pre> */}
 
 
-                <form onSubmit={this.submitForm}>
-                    <textarea type="text" onChange={this.onHandleChange} 
-                           name="choice_text"
-                           placeholder="Start writing this page's choice content..." />
-                    {/* <input type="number" onChange={this.onHandleChange}
-                            name="next_page_id"
-                            placeholder="Next Page Id" /> */}
-                    <input type="submit" value="submit" />
+                <form
+                    onSubmit={this.submitForm}>
+
+                    <input type="number" 
+                        onChange={this.onHandleChange}
+                        name="page_id"
+                        defaultValue="1"
+                        placeholder="This Story Page ID" />
+
+                    <br>
+                    </br>
+
+
+                    <input 
+                        type="textarea" 
+                        onChange={this.onHandleChange} 
+                        name="choice_text"
+                        placeholder="Start writing the choice's content..." />
+                    <br>
+                    </br>
+                        
+                    <input type="number" 
+                        onChange={this.onHandleChange}
+                        name="next_page_id"
+                        placeholder="Next Story Page ID" />
+
+                    <br>
+                    </br>
+
+                    <button
+                        class="newButton"
+                        onClick={this.submitForm} 
+                        >
+                        SAVE
+                    </button>   
+
+                    <button
+                        class="cancelButton"
+                        onClick={this.goBack} 
+                        >
+                        CANCEL
+                    </button>                                      
+                                   
+
+
                 </form>
             </div>
         );

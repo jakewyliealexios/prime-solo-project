@@ -4,22 +4,60 @@ import { connect } from 'react-redux';
 import { Grid } from '@material-ui/core'
 
 import PageListItem from './PageListItem'
+import ChoiceCreate from './ChoiceCreate'
 
 class PageList extends Component {
 
-    // Displays a vertical list with project details
+    componentDidMount() {
+        this.props.dispatch({type: 'FETCH_CHOICES'});
+    }
+
+
+    newChoiceClick = ( event, props ) => {        
+        this.props.history.push('/choicecreate');
+    }
+
+
     render() {
         return (
             <div>
-                {/* <pre>{JSON.stringify(this.props.reduxState.pageReducer)}</pre>
-                <pre>{JSON.stringify(this.props.reduxState.choiceReducer.currentChoicesState)}</pre>
-                <pre>{JSON.stringify(this.props.reduxState.choiceReducer.choicesState)}</pre> */}
 
-                {/* {this.props.reduxState.pageReducer.pageState.map((page, i) => {
-                    return (<PageListItem key={i} page={page}
-                        choiceReducer={this.props.reduxState.choiceReducer}
-                        />);
-                })} */}
+                <Grid container>
+
+                    <Grid item sm>
+                        <div class="pageAdminArea">
+                            {this.props.reduxState.pageReducer.currentPageState.map((page, i) => {
+                                return(
+                                    <div>
+                                        <h3>{page.page_text}</h3>
+                                        <Grid container>
+
+                                            <Grid item sm>
+                                            </Grid>
+
+                                            <Grid item sm>
+                                                <button
+                                                    class="newButton"
+                                                    name="id"
+                                                    onClick={this.newChoiceClick} 
+                                                    >
+                                                    CREATE NEW CHOICE FOR PAGE {page.id}
+                                                </button>                                      
+                                            </Grid>
+
+                                            <Grid item sm>
+                                            </Grid>
+
+                                        </Grid>
+                                    </div>
+                                );
+
+                            })}
+                        </div>
+
+                    </Grid>
+                
+                </Grid>
 
                 <Grid container>
 

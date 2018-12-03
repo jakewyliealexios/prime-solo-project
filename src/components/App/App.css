@@ -8,7 +8,7 @@ body {
     margin: 50px;
 }
 
-form {
+/* form {
     align-content: center;
     background-color: antiquewhite;
     width: 325px;
@@ -16,7 +16,7 @@ form {
     margin: 50px auto;
     padding: 25px;
     border-radius: 2px;
-}
+} */
 
 input {
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;

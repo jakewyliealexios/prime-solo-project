@@ -3,7 +3,7 @@ import { takeEvery, call, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 // Create the rootSaga generator functionc 
-function* pageCreateSaga() {
+function* choiceCreateSaga() {
     yield takeEvery('ADD_CHOICE', postChoice);
     yield takeEvery('FETCH_CHOICES', getChoices);
     // yield takeEvery('NEW_CHOICES', getCurrentChoices);
@@ -31,4 +31,14 @@ function* postChoice(action) {
     }
 }
 
-export default pageCreateSaga;
+function* putChoice(action) {
+    try {
+        yield call(axios.put, '/choices', action.payload)
+    } catch (error) {
+        console.log(error);
+        alert('Unable to edit choice (putChoice');
+        
+    }
+}
+
+export default choiceCreateSaga;

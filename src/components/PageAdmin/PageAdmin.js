@@ -13,6 +13,10 @@ class PageAdmin extends Component {
         this.props.dispatch({type: 'FETCH_PAGES'});
     }
 
+    newPageClick = ( props ) => {
+        this.props.history.push('/pagecreate');
+    }
+
     // Displays a vertical list with page details
     render() {
         return (
@@ -21,12 +25,29 @@ class PageAdmin extends Component {
                 {/* <Link className="nav-link" to="/pagecreate">
                     Create New Story Page
                 </Link> */}
+                    <Grid container>
+
+                        <Grid item sm>
+                            <p>Create a new STORY PAGE by clicking the button ... 
+                            </p>
+                        </Grid>
+
+                        <Grid item sm>
+                            <p>... adding its STORY PAGE ID to the collection below.</p>
+                        </Grid>
+
+
+                    </Grid>
+                <div class="pageAdminArea">
+                </div>
+
                 <Grid container>
                     <Grid item sm>
                     </Grid>
                     <Grid item sm>
                         <button
                             class="newButton"
+                            onClick={this.newPageClick} 
                             >
                             CREATE NEW STORY PAGE
                         </button>
@@ -35,7 +56,8 @@ class PageAdmin extends Component {
                     </Grid>
                 </Grid>
 
-                <PageList />
+                <PageList 
+                    history={this.props.history}/>
             </div>
         );
     }

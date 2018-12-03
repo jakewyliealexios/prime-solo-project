@@ -35,6 +35,15 @@ class PageListItem extends Component {
         return (
             <div>
                     <Grid container>
+
+                        <Grid item sm>
+                            <p>Click a STORY PAGE ID to view
+                                and edit its available choices
+                            </p>
+                        </Grid>
+
+                    </Grid>
+                    <Grid container>
                     
                         {this.props.pageState.map((page, i) => {
                             return(

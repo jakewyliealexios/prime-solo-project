@@ -21,9 +21,9 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     console.log('req.body is set as', req.body);
     const queryText = `INSERT INTO "choices" 
-                            ("choice_text", "next_page_id")
-                        VALUES ($1, $2);`;
-    pool.query(queryText, [req.body.choice_text, req.body.next_page_id])
+                            ("page_id", "choice_text", "next_page_id")
+                        VALUES ($1, $2, $3);`;
+    pool.query(queryText, [req.body.page_id, req.body.choice_text, req.body.next_page_id])
         .then((results) => {
             res.sendStatus(201);
         }).catch((error) => {
